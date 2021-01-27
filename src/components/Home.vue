@@ -2,6 +2,15 @@
   <div>
     <h1>Générateur de fuck off</h1>
     <form @submit.prevent="getNewFoaas">
+      <select v-model="state.options.request">
+        <option
+          :value="choice.request"
+          v-for="(choice, i) in state.choicesSelect"
+          :key="i"
+        >{{ choice.name }}</option>
+      </select>
+      <label>From:</label>
+      <input type="text" v-model="state.options.from" placeholder="Your name"/>
       <button>Cliquez !</button>
     </form>
     <div>
@@ -13,15 +22,18 @@
 
 <script>
 import { reactive } from "vue";
+import { optionsList } from "../assets/optionsList";
+console.log(optionsList)
 
 export default {
   name: "Home",
   setup() {
     const state = reactive({
-      urlApi: "https://foaas.com/awesome/",
-      choicesSelect: [],
+      urlApi: "https://foaas.com/",
+      choicesSelect: optionsList,
       options: {
-        from: "toto",
+        request: null,
+        from: '',
         company: null,
         name: null,
       },
@@ -31,17 +43,17 @@ export default {
     function getNewFoaas() {
       const headers = {
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      }
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      };
 
-      return fetch(state.urlApi + state.options.from, headers)
+      return fetch(state.urlApi + state.options.request + '/' + state.options.from, headers)
         .then((blob) => blob.json())
         .then((datas) => {
           console.log(datas);
-          state.response = datas
-/* 
+          state.response = datas;
+          /* 
           charactersInfos.push(...datas.results);
           infosSupp.push(...datas.info); */
         })
