@@ -1,6 +1,16 @@
 export const optionsList = [
-    { "name": 'This is Fucking Awesome', "request": 'awesome'},
-    { "name": 'Eat a bag of fucking dicks', "request": 'bag'},
-    { "name": 'Fuck you, asshole', "request": 'asshole'},
-    { "name": 'Why? Because fuck you, that\'s why', "request": 'Why? Because fuck you, that\'s why'}
+    { "name": 'Try this one', "toPossible": false, "request": 'awesome'},
+    { "name": 'Or this one', "toPossible": false, "request": 'bag'},
+    { "name": 'Yeah a classical', "toPossible": false, "request": 'asshole'},
+    { "name": 'Long one', "toPossible": false, "request": 'because'},
+    { "name": 'Sweat one', "toPossible": false, "request": 'bye'},
+    { "name": 'You can test it !', "toPossible": false, "request": 'cool'},
+    { "name": 'Big big one', "toPossible": false, "request": 'cup'},
+    { "name": 'Specific one', "toPossible": false, "request": 'diabetes'},
+    { "name": 'Why not this one?', "toPossible": false, "request": 'even'},
+    { "name": 'Big anger', "toPossible": false, "request": 'everyone'},
+    { "name": 'Big anger too', "toPossible": false, "request": 'everything'},
+    { "name": 'Big anger for everyone', "toPossible": false, "request": 'family'},
+    { "name": 'Head story', "toPossible": true, "request": 'blackadder'},
+    { "name": 'Bus story', "toPossible": true, "request": 'bus'},
 ];
